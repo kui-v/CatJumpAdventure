@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bum07aosc6abq"]
+
+[ext_resource type="Texture2D" uid="uid://blxipxiose10m" path="res://assets/player/Pea.png" id="1_lkhp6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1ir4"]
+size = Vector2(13, 10)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lkhp6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_m1ir4")
