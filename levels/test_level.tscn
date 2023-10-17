@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpauyux155tr4"]
+
+[ext_resource type="PackedScene" uid="uid://cja6diu62lflp" path="res://levels/tile_map.tscn" id="1_8fjn1"]
+[ext_resource type="PackedScene" uid="uid://bum07aosc6abq" path="res://player/player.tscn" id="1_63wtg"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.27451, 0.27451, 0.27451, 1)
+
+[node name="TileMap" parent="." instance=ExtResource("1_8fjn1")]
+layer_0/tile_data = PackedInt32Array(131071, 458753, 4, 196607, 458753, 5, 262143, 458753, 6, 65536, 524289, 4, 131072, 524289, 5, 196608, 524289, 6, 65537, 589825, 4, 131073, 589825, 5, 196609, 589825, 6)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Player" parent="." instance=ExtResource("1_63wtg")]
+gravity_scale = 0.1
