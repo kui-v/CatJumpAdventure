@@ -6,7 +6,7 @@ extends RigidBody2D
 @onready var timer_label : Label = get_node("UILayer/TimerLabel")
 
 var hold_time : float = 0
-var hold_force : float = 50
+var hold_force : float = 75
 
 # hold button and release - force
 # 1. on button press
