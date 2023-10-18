@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://jfqv24h8e8q7"]
+
+[ext_resource type="PackedScene" uid="uid://cja6diu62lflp" path="res://levels/tile_map.tscn" id="1_b50ha"]
+
+[node name="PlatformTest" type="Node2D"]
+position = Vector2(75, 29)
+
+[node name="TileMap" parent="." instance=ExtResource("1_b50ha")]
+layer_0/tile_data = PackedInt32Array(-1, 458753, 4, 65535, 458753, 5, 131071, 458753, 6, -65536, 524289, 4, 0, 524289, 5, 65536, 524289, 6, -65535, 589825, 4, 1, 589825, 5, 65537, 589825, 6)
