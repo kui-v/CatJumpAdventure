@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b65ipbx5pkfht"]
+
+[ext_resource type="PackedScene" uid="uid://jfqv24h8e8q7" path="res://levels/platform.tscn" id="1_b113j"]
+[ext_resource type="Texture2D" uid="uid://cu4kn0q0bysip" path="res://assets/tiles/platform_3x1.png" id="1_g3k6j"]
+
+[node name="Platform" instance=ExtResource("1_b113j")]
+
+[node name="Sprite2D" parent="PlatformBody" index="0"]
+texture = ExtResource("1_g3k6j")
+
+[node name="CollisionPolygon2D" parent="PlatformBody" index="1"]
+polygon = PackedVector2Array(-24, -6, 23, -6, 22, 2, 16, 4, -6, 5, -23, 2)
+
+[node name="CollisionDetection" parent="." index="1"]
+position = Vector2(0, -7)
+scale = Vector2(2.27989, 0.108127)
