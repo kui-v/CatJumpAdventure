@@ -17,6 +17,7 @@ var hold_force : float = 75
 # process should only handle the timer; all physics should be done when action released
 func _process(_delta):
 	timer_label.text = str(hold_timer.time_left).pad_decimals(2)
+	calculate_trajectory(_delta)
 
 
 # using mouse and moving at the same time will make timer not work as expected
@@ -39,3 +40,8 @@ func apply_movement():
 	apply_impulse(direction * force)
 	label_text.text = str(force)
 	label_text_2.text = str(direction)
+
+
+func calculate_trajectory(delta):
+	var position = global_position
+	print(position)
