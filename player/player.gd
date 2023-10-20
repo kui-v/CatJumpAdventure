@@ -3,6 +3,7 @@ extends RigidBody2D
 @onready var hold_timer : Timer = get_node("Timer")
 @onready var label_text : Label = get_node("UILayer/Label")
 @onready var label_text_2 : Label = get_node("UILayer/Label2")
+@onready var label_text_3 : Label = get_node("UILayer/Label3")
 @onready var timer_label : Label = get_node("UILayer/TimerLabel")
 @onready var trajectory_line : Line2D = get_node("TrajectoryLine")
 
@@ -41,19 +42,19 @@ func apply_movement():
 	var direction = global_position.direction_to(get_global_mouse_position())
 	apply_impulse(direction * force) #let's not use apply_impulse here
 	label_text.text = str(force)
-	label_text_2.text = str(direction)
 
 
 func update_trajectory(delta):
 	trajectory_line.clear_points()
 	var max_points = 250
-	var pos = global_position
+	var pos = to_local(global_position)
 	var vel = global_transform.x * force * global_position.direction_to(get_global_mouse_position())
+	label_text_2.text = str(pos)
+	label_text_3.text = str(get_global_mouse_position())
 	for i in max_points:
 		trajectory_line.add_point(pos)
-#		vel.y += gravity_scale * mass * i * delta
+		# vel.y += gravity_scale * mass * i * delta
 		pos += vel * delta
-	print(vel)
 	
 #	var pos = global_position
 #	var vel = global_transform.x * force
