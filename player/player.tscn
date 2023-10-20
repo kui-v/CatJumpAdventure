@@ -1,20 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bum07aosc6abq"]
+[gd_scene load_steps=4 format=3 uid="uid://bum07aosc6abq"]
 
 [ext_resource type="Texture2D" uid="uid://blxipxiose10m" path="res://assets/player/Pea.png" id="1_lkhp6"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_w3lt3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uh8b0"]
+size = Vector2(10, 10)
 
 [node name="Player" type="RigidBody2D"]
 collision_layer = 2
 mass = 0.25
 gravity_scale = 0.1
-linear_damp = 1.0
+lock_rotation = true
 script = ExtResource("1_w3lt3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lkhp6")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-5, -1, -5, 4, -4, 4, -4, 2, -2, 2, -2, 4, -1, 4, -1, 2, 2, 2, 2, 4, 3, 4, 3, 2, 5, 2, 5, 4, 6, 4, 6, -6, 5, -6, 3, -4, 1, -6, 0, -6, -2, -3)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_uh8b0")
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
@@ -32,11 +36,19 @@ offset_right = 50.0
 offset_bottom = 73.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Label3" type="Label" parent="UILayer"]
+offset_left = 10.0
+offset_top = 36.0
+offset_right = 50.0
+offset_bottom = 59.0
+metadata/_edit_use_anchors_ = true
+
 [node name="TimerLabel" type="Label" parent="UILayer"]
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 50.0
 offset_bottom = 33.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

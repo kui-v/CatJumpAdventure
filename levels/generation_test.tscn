@@ -13,9 +13,9 @@ layer_0/tile_data = PackedInt32Array(-589842, 1114113, 17, -655343, 1245185, 17,
 [node name="GenerationTimer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="Player" parent="." instance=ExtResource("2_gvjxf")]
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="Player" parent="." instance=ExtResource("2_gvjxf")]
 
 [connection signal="timeout" from="GenerationTimer" to="." method="_on_generation_timer_timeout"]
